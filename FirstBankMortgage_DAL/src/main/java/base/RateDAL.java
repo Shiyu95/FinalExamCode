@@ -1,9 +1,9 @@
 package base;
 
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -14,15 +14,58 @@ import domain.RateDomainModel;
 import util.HibernateUtil;
 
 public class RateDAL {
-
-
-	public static double getRate(int GivenCreditScore) {
-		//FinalExam - please implement		
-		// Figure out which row makes sense- return back the 
-		// right interest rate from the table based on the given credit score
-		
-		//FinalExam - obviously change the return value
-		return 0;
+	
+		public static double getRate(int GivenCreditScore) {
+			
+			double TBLRateGet1 = 0; 
+			
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction tx = null;
+			RateDomainModel TBLRateGet = null;		
+			
+			try {
+				tx = session.beginTransaction();	
+										
+				Query query = session.createQuery("from RateDomainModel  where GivenCreditScore = :minCreditScore ");
+				query.setParameter("minCreditScore", GivenCreditScore);
+				
+				List<?> list = query.list();
+				TBLRateGet = (RateDomainModel)list.get(0);
+				
+				tx.commit();
+			} catch (HibernateException e) {
+				if (tx != null)
+					tx.rollback();
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+			return TBLRateGet1;
+				
 	}
-
+	public static ArrayList<RateDomainModel> getRate() {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = null;
+		RateDomainModel RateGet = null;		
+		ArrayList<RateDomainModel> Rates = new ArrayList<RateDomainModel>();
+		
+		try {
+			tx = session.beginTransaction();	
+			
+			List rates = session.createQuery("FROM RateDomainModel").list();
+			for (Iterator iterator = rates.iterator(); iterator.hasNext();) {
+				RateDomainModel Rate = (RateDomainModel) iterator.next();
+				 Rates.add(Rate);
+			}
+			
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return Rates;
+	}		
 }
