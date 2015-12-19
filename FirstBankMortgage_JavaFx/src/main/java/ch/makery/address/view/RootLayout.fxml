@@ -12,7 +12,6 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
                   <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
-          </items>
           </Menu>
         </menus>
       </MenuBar>

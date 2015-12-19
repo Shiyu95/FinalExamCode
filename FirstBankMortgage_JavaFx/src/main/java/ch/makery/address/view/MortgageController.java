@@ -2,6 +2,7 @@ package ch.makery.address.view;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.text.Text;
 
 import java.util.UUID;
@@ -22,29 +24,41 @@ import ch.makery.address.model.Rate;
 
 public class MortgageController {
 	
-	//Create observable list to hold values for ComboBox
+
 	ObservableList<String> ComboTermList = (ObservableList<String>) FXCollections.observableArrayList("15", "30");       
 	
 	@FXML 
-	private TextField txtMonthlyIncome;
+	public TextField txtMonthlyIncome;
 	
 	@FXML 
-	private TextField txtMonthlyExpenses;
+	public TextField txtMonthlyExpenses;
 	
 	@FXML 
-	private TextField txtCreditScore;
+	public TextField txtCreditScore;
 	
 	@FXML 
-	private TextField txtHouseCost;
+	public TextField txtHouseCost;
 	
 	@FXML
-	private ComboBox ComboTerm;
+	public ComboBox ComboTerm;
 	
 	@FXML
-	private Button btnCalculateMortgage;
+	public Button lblCalculateMortgage;
 	
-	@FXML 
-	private Text txtOutput;
+	@FXML
+	public Label  MonthlyIncome;
+	
+	@FXML
+	public Label MonthlyExpenses;
+	
+	@FXML
+	public Label CreditScore;
+	
+	@FXML
+	public Label HouseCost;
+	
+	@FXML
+	public Label MortgageTerm;
 	
 
     // Reference to the main application.
@@ -63,10 +77,14 @@ public class MortgageController {
      */
     @FXML
     private void initialize() {
-    	//Set the choices for the ComboBox
-    	ComboTerm.setItems(ComboTermList);
-    	//Hide the Output TextBox 
-    	txtOutput.setVisible(false);
+    	
+    }
+    
+    public void SetComboBox() {
+    	ObservableList<String> terms = FXCollections.observableArrayList(
+        "15","30"
+    	); 
+    	ComboTerm.setItems(terms);
     }
 
     /**
@@ -75,13 +93,14 @@ public class MortgageController {
      * @param mainApp
      */
     public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
+		this.mainApp = mainApp;
+	}
+    @FXML
+    private void Mortgagecalculation() {
+    
     }
-    
-    
-    }
-    
-    
+	
+}
     
     
     
