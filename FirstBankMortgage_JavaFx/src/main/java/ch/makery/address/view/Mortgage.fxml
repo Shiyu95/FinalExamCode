@@ -59,7 +59,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#handleCalculate" prefHeight="46.0" prefWidth="141.0" text="Get Payment" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="141.0" text="Get Payment" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label prefHeight="75.0" prefWidth="158.0" text="      Morgage Payment" GridPane.rowIndex="1" />
                               <Label fx:id="lblCalculateMortgage" prefHeight="17.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
