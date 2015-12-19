@@ -6,24 +6,19 @@ import base.RateDAL;
 import domain.RateDomainModel;
 
 public class Rate extends RateDomainModel {
-	
-	public  double getPayment(double income, double expenses, double houseCost, int Term) {
-	    	// Calculate interest rate from credit score and amount of payment terms
-	    	double interestRate = RateDAL.getRate(getMinCreditScore());
-	    	double amntTerms = Term * 12;
-	    	
-	    	// Calculate the PMT:
-	    	double PMT = FinanceLib.pmt(interestRate, amntTerms, houseCost, 0, false);
-	    	
-	    	// Calculate the maximums for mortage payments
-	    	double cap1 = income * .36;
-	    	double cap2 = (income + expenses*12)*.28;
-	    	
-	    	if(PMT <= cap1 && PMT <= cap2) {
-	    		return PMT;
-	    	} else {
-	    		return 0.0;
-	    	}
-	    	
+
+	public void getPayment(double MonthlyIncome, double MonthlyExpenses, double HouseCost, int MortgageTerm) {
+
+		double InterestRate = RateDAL.getRate(getMinCreditScore());
+		int Terms = MortgageTerm * 12;
+		double MothlyPay1 = MonthlyIncome * 0.36;
+		double MothlyPay2 = (MonthlyIncome + MonthlyExpenses) *0.28;
+		double PMT = FinanceLib.pmt(InterestRate, Terms, HouseCost, 0, false);
+		if (PMT <= MothlyPay1 && PMT <= MothlyPay2) {
+			System.out.println("The cost of the house too high.");
+		} else {
+			System.out.printf("The Mortgage Payment of the house: #.00",PMT);;
 		}
+
+	}
 }
