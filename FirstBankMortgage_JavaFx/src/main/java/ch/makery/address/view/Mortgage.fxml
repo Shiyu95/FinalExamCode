@@ -48,18 +48,20 @@
                <children>
                   <HBox layoutX="14.0" layoutY="119.0" prefHeight="361.0" prefWidth="402.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <GridPane prefHeight="418.0" prefWidth="237.0">
+                        <GridPane prefHeight="375.0" prefWidth="323.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="124.07391357421875" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.30731201171875" minWidth="0.0" prefWidth="75.92608642578125" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.0" minWidth="10.0" prefWidth="175.08489990234375" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.62744140625" minWidth="0.0" prefWidth="147.91510009765625" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints maxHeight="252.0813446044922" minHeight="10.0" prefHeight="252.0813446044922" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="129.92276000976562" minHeight="10.0" prefHeight="24.918655395507812" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <TextField prefHeight="32.0" prefWidth="97.0" />
+                              <Button mnemonicParsing="false" onAction="#handleCalculate" prefHeight="46.0" prefWidth="141.0" text="Get Payment" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label prefHeight="75.0" prefWidth="158.0" text="      Morgage Payment" GridPane.rowIndex="1" />
+                              <Label fx:id="lblCalculateMortgage" prefHeight="17.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -75,6 +77,5 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Button fx:id="btnCalculateMortgage" layoutX="568.0" layoutY="370.0" mnemonicParsing="false" onAction="#handleBtnCalculate" prefHeight="46.0" prefWidth="141.0" text="Get Payment" />
    </children>
 </AnchorPane>
