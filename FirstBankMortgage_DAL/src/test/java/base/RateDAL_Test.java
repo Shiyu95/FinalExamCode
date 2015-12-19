@@ -2,70 +2,45 @@ package base;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class RateDAL_Test {
-
-	private double intrstRate = 0;
 	
-	@Test
-	public void testGetRates() {
-		assertTrue(RateDAL.getRate().size() > 0);
-	}
-	
-	@Test 
-	public void test600(){
-		intrstRate = RateDAL.getRate(600);
-		assertTrue(intrstRate == 5);
-	}
-	
-	@Test 
-	public void test625(){
-		intrstRate = RateDAL.getRate(625);
-		assertTrue(intrstRate == 5);
-	}	
-
-	@Test 
-	public void test650(){
-		intrstRate = RateDAL.getRate(650);
-		assertTrue(intrstRate == 4.5);
-	}
-	
-	@Test  
-	public void test675(){
-		intrstRate = RateDAL.getRate(675);
-		assertTrue(intrstRate == 4.5);
-	}
-	
-	@Test 
-	public void test700(){
-		intrstRate = RateDAL.getRate(700);
-		assertTrue(intrstRate == 4);
-	}
-	
-	@Test
-	public void test725(){
-		intrstRate = RateDAL.getRate(725);
-		assertTrue(intrstRate == 4);
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 	}
 
-	public void test750(){
-		intrstRate = RateDAL.getRate(750);
-		assertTrue(intrstRate == 3.75);
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
 	}
-	
-	
-	@Test
-	public void test755(){
-		intrstRate = RateDAL.getRate(755);
-		assertTrue(intrstRate == 3.75);
-	}	
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
 
 	@Test
-	public void test800(){
-		intrstRate = RateDAL.getRate(800);
-		assertTrue(intrstRate == 3.5);
+	public void Test(){
+		double Ratetest1 = RateDAL.getRate(600);
+		assertTrue(Ratetest1 == 3.75);
+		
+		double Ratetest2 = RateDAL.getRate(710);
+		assertTrue(Ratetest2 == 4.75);
+		
+		double Ratetest3 = RateDAL.getRate(750);
+		assertTrue(Ratetest3 == 3.75);
+		
+		double Ratetest4 = RateDAL.getRate(800);
+		assertTrue(Ratetest4 == 3.45);
+		
 	}
-	
-
 }
+
