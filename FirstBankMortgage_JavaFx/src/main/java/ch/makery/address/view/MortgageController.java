@@ -97,7 +97,9 @@ public class MortgageController {
 	}
     @FXML
     private void Mortgagecalculation() {
-    
+    	MonthlyIncome.setText(txtMonthlyIncome.getText());
+    	MonthlyIncome.setVisible(true);
+    	txtMonthlyIncome.setVisible(false);
     }
 	
 }

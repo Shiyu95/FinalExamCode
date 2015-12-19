@@ -17,8 +17,8 @@
                      <children>
                         <GridPane prefHeight="373.0" prefWidth="340.0">
                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.77398681640625" minWidth="10.0" prefWidth="184.01010131835938" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.76388549804688" minWidth="10.0" prefWidth="124.98989868164062" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.77398681640625" minWidth="10.0" prefWidth="185.45289611816406" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.11549377441406" minWidth="10.0" prefWidth="154.54710388183594" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -28,11 +28,11 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label prefHeight="30.0" prefWidth="175.0" text="  Enter Monthly Income" />
-                              <Label prefHeight="33.0" prefWidth="231.0" text="  Enter Monthly Expenses" GridPane.rowIndex="1" />
-                              <Label prefHeight="31.0" prefWidth="193.0" text="  Enter Credit Score" GridPane.rowIndex="2" />
-                              <Label prefHeight="35.0" prefWidth="182.0" text="  Enter House Cost" GridPane.rowIndex="3" />
-                              <Label prefHeight="37.0" prefWidth="184.0" text="  Select Mortgage Term" GridPane.rowIndex="4" />
+                              <Label prefHeight="30.0" prefWidth="175.0" text="   Monthly Income" />
+                              <Label prefHeight="33.0" prefWidth="231.0" text="   Monthly Expenses" GridPane.rowIndex="1" />
+                              <Label prefHeight="31.0" prefWidth="193.0" text="   Credit Score" GridPane.rowIndex="2" />
+                              <Label prefHeight="35.0" prefWidth="182.0" text="   House Cost" GridPane.rowIndex="3" />
+                              <Label prefHeight="37.0" prefWidth="184.0" text="  Mortgage Term" GridPane.rowIndex="4" />
                               <TextField fx:id="txtMonthlyIncome" GridPane.columnIndex="1" />
                               <TextField fx:id="txtMonthlyExpenses" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="txtCreditScore" GridPane.columnIndex="1" GridPane.rowIndex="2" />
